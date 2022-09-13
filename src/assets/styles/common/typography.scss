@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap');
+
+html {
+  font-size: 100%;
+
+  @include mobile-and-tablet {
+    font-size: 14px;
+  }
+}
+
+body {
+  hyphens: none;
+  font-family: $font;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  color: c(black);
+}
+
+a {
+  color: inherit;
+}
+
+
+@each $value, $key in $font-sizes {
+  .t-#{$value} {
+    @include font-size(map-get($key, font-size));
+  }
+}
+
+body {
+  @include font-size(base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  line-height: 1.15;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+
+h1 {
+  @include font-size(xlarge);
+}
+
+h2 {
+  @include font-size(xxlarge);
+  font-weight: 500;
+}
+
+h3 {
+  @include font-size(large);
+}
+
+h4 {
+  @include font-size(large);
+}
+
+h5 {
+  @include font-size(medium);
+}
+
+small,
+.text_small {
+  @include font-size(xsmall);
+}
+
+.capitalise {
+  text-transform: capitalize;
+}
+
+p {
+  max-width: 60ch;
+}
+
+ul {
+  padding-left: 0;
+}

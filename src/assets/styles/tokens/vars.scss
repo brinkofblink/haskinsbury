@@ -1,0 +1,115 @@
+@import '../../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+// --- variables ---
+
+// sizing
+$rem: 16px;
+$p:   1.5rem;
+
+$x-pad-mobile: 2rem;
+$x-pad-desktop: 6rem;
+
+$header: 10rem;
+
+$border-radius: 0.2rem;
+
+// breakpoints
+// breakpoints
+$breakpoint-first: "tablet";
+$breakpoints: (
+  "tablet":  620,
+  "s-desktop": 768,
+  "desktop": 1100,
+  "l-desktop": 1200,
+  "massive": 1600,
+);
+
+
+// transitions
+$transition: 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+// etc
+$max: 99999px;
+
+// --- mixins & functions ---
+
+// breakpoints
+
+@function bp($size) {
+  @return map-get($breakpoints, $size) * 1px;
+}
+@mixin mq($size) {
+  @include breakpoint(bp($size)) { @content; }
+}
+
+@mixin mobile {
+  @include breakpoint(max-width (bp($breakpoint-first) - 1px)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @include breakpoint(bp(tablet))  { @content; }
+}
+@mixin mobile-and-tablet {
+  @include breakpoint(max-width (bp(desktop) - 1px)) {
+    @content;
+  }
+}
+@mixin desktop-s {
+  @include breakpoint(bp(s-desktop)) { @content; }
+}
+@mixin desktop {
+  @include breakpoint(bp(desktop)) { @content; }
+}
+@mixin desktop-l {
+  @include breakpoint(bp(l-desktop)) { @content; }
+}
+@mixin massive {
+  @include breakpoint(bp(massive)) { @content; }
+}
+
+@mixin container {
+  @include mq($breakpoint-first) {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  max-width: bp(massive);
+}
+
+// transitions
+
+@mixin animate($props...) {
+  $transitions: ();
+  @each $prop in $props {
+    $transitions: append($transitions, $prop $transition, comma);
+  }
+
+  transition: $transitions;
+}
+
+
+// visibility
+
+@mixin nav-toggled {
+  html[data-nav-toggled="1"] & {
+    @include mobile {
+      @content;
+    }
+  }
+}
+
+@mixin sr-only {
+  font-size: 1px;
+  position: absolute;
+  top: -$max;
+  left: -$max;
+}
+
+@mixin button-height {
+  height: 3rem;
+  @include desktop-s {
+    height: 2.2rem;
+  }
+}

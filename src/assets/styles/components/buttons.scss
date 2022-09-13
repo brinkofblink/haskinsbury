@@ -1,0 +1,15 @@
+.button {
+  @include button(#201136, #fff);
+  font-family: 'Raleway', sans-serif;
+  span {
+    margin-right: 1ch;
+    // color: var(--highlightColour2);
+  }
+  + p {
+    margin-top: 2rem;
+  }
+}
+
+[class*="bg-"] .button.button--big {
+    @include font-size(large);
+}

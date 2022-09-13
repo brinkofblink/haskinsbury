@@ -1,0 +1,32 @@
+nav {
+  grid-column: 3;
+  @include tablet {
+    grid-column: 2;
+  }
+  color: c(gold);
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+
+    li {
+      margin: .8rem 0;
+      @include tablet {
+        margin: 0 1rem;
+      }
+      @include font-size(large);
+      a {
+        text-decoration: none;
+      }
+      &.nav__item--active {
+        text-decoration: underline;
+        text-decoration-thickness: 0.5ex;
+      }
+    }
+  }
+}

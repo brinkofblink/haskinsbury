@@ -1,0 +1,23 @@
+// colours
+$palettes: (
+    white: (
+        50: #EDF6F8,
+        100: #ffffff
+    ),
+    black: (
+        50: #191919,
+        75: #292929
+    ),
+    blue: (
+        0: #1D1033,
+        50: #157d94,
+        70: #299a95,
+    ),
+    gold: (
+        50: #E6CF8F
+    )
+);
+
+@function c($palette, $tone: 50) {
+    @return map-get(map-get($palettes, $palette), $tone);
+}

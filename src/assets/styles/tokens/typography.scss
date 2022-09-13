@@ -1,0 +1,31 @@
+@import "vars";
+@import "colours";
+
+$font: 'Abril Fatface', cursive;
+
+$light: 300;
+$roman: 400;
+$medium: 500;
+
+$font-sizes: (
+  'xsmall': (font-size: 13.33, line-height: 1.5),
+  'small': (font-size: 15, line-height: 1.5),
+  'base': (font-size: 16, line-height: 1.5),
+  'medium': (font-size: 18, line-height: 1.15),
+  'large': (font-size: 19.2, line-height: 1.15),
+  'xlarge': (font-size: 23.04, line-height: 1.5),
+  'xxlarge': (font-size: 27.64, line-height: 1.15),
+	'xxxlarge': (font-size: 33.18, line-height: 1.15),
+	'xxxxlarge': (font-size: 39.81, line-height: 1.15),
+  );
+  @mixin font-size($size) {
+    $font-size-properties: map-get($font-sizes, $size);
+
+    @if $font-size-properties {
+      @include font-size(map-get($font-size-properties, font-size));
+      line-height: map-get($font-size-properties, line-height);
+    } @else {
+      font-size: #{$size}px;
+      font-size: #{$size / 16}rem;
+    }
+  }
