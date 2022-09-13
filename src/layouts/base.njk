@@ -13,12 +13,13 @@
     <body>
         <div hidden>{% iconsprite %}</div>
         <a href="#main" class="sr-skip-link">skip to main content</a>
-        <div class="layout" role="document">
-            {% include "header.njk" %}
+        <div
+            class="layout" role="document">
+            {# {% include "header.njk" %} #}
             <main id="main" class="main">
                 {{ content | safe }}
             </main>
-            {% include "footer.njk" %}
+            {# {% include "footer.njk" %} #}
         </div>
     </body>
 </html>

@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap');
-
-html {
-  font-size: 100%;
-
-  @include mobile-and-tablet {
-    font-size: 14px;
-  }
+/* amatic-sc-regular - latin */
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/amatic-sc-v24-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/amatic-sc-v24-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/amatic-sc-v24-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/amatic-sc-v24-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/amatic-sc-v24-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/amatic-sc-v24-latin-regular.svg#AmaticSC') format('svg'); /* Legacy iOS */
 }
 
 body {
@@ -28,10 +32,6 @@ a {
   }
 }
 
-body {
-  @include font-size(base);
-}
-
 h1,
 h2,
 h3,
@@ -42,41 +42,6 @@ h5 {
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.05em;
-}
-
-
-h1 {
-  @include font-size(xlarge);
-}
-
-h2 {
-  @include font-size(xxlarge);
-  font-weight: 500;
-}
-
-h3 {
-  @include font-size(large);
-}
-
-h4 {
-  @include font-size(large);
-}
-
-h5 {
-  @include font-size(medium);
-}
-
-small,
-.text_small {
-  @include font-size(xsmall);
-}
-
-.capitalise {
-  text-transform: capitalize;
-}
-
-p {
-  max-width: 60ch;
 }
 
 ul {

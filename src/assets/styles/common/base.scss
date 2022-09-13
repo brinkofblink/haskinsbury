@@ -6,7 +6,9 @@ body {
   min-height: -webkit-fill-available;
   display: grid;
   max-width: 100vw;
-  background: linear-gradient(0deg, #e2dedb, #a5b6ca, #6795ca, #5d5fb9);
+  background: white;
+  font-size: clamp(1rem, 2.8vw,3rem);
+  color: c(pink);
 }
 
 html {

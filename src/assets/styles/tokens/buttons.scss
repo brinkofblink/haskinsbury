@@ -26,8 +26,8 @@
   }
   transition: background 0.2s ease, transform 0.2s ease;
   &:hover {
-      background-color: c(gold);
-      color: c(blue, 0);
+      background-color: c(pink);
+      color: c(black, 0);
   }
   &:focus {
     text-decoration: underline;
