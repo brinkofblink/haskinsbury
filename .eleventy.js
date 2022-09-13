@@ -1,6 +1,7 @@
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginRSS = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
+const Image = require('@11ty/eleventy-img')
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -29,6 +30,9 @@ module.exports = function (config) {
 
     // Icon Sprite
     config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
+
+    config.addNunjucksAsyncShortcode("image", imageShortcode);
+
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
@@ -71,3 +75,21 @@ module.exports = function (config) {
         markdownTemplateEngine: 'njk'
     }
 }
+
+
+async function imageShortcode(src, alt, sizes) {
+    let metadata = await Image(src, {
+      widths: [300, 600, 1200, 2400, 3200],
+      formats: ["avif", "png", "webp"],
+      outputDir: "./dist/assets/images",
+      urlPath: "./assets/images",
+    });
+
+    let imageAttributes = {
+      alt,
+      sizes
+    };
+
+    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes);
+  }
