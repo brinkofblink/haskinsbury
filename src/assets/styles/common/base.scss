@@ -1,4 +1,14 @@
-::selection {}
+::selection {
+  background-color: c(pink);
+  color: white;
+}
+
+.bg-pink, .bg-light-pink {
+  ::selection {
+    color: c(pink);
+    background-color: white;
+  }
+}
 
 body {
   min-height: 100vh;

@@ -1,6 +1,8 @@
 .footer {
   display: flex;
   justify-content: center;
+  height: 5rem;
+  background-color: c(pink, light);
   ul {
     display: inline-flex;
     justify-content: center;

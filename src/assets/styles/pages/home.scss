@@ -66,6 +66,10 @@
   .stay-tuned {
     padding-top: clamp(3rem, 6vw, 9rem);
     padding-bottom: clamp(3rem, 5vw, 8rem);
+    + .bg-light-pink {
+      background-color: c(pink, light);
+      height: 10rem;
+    }
   }
 }
 
@@ -77,4 +81,100 @@ h1, h2, p {
   margin: 0;
   color: c(pink);
   line-height: 1.2;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#beams > *, #love > *, #love path, #crowd circle, #crowd ellipse {
+  animation: 3s fade-out forwards;
+}
+
+#beams {
+  polygon:nth-of-type(1) {
+    animation-delay: 0.5s;
+  }
+  polygon:nth-of-type(2) {
+    animation-delay: 1s;
+  }
+  polygon:nth-of-type(3) {
+    animation-delay: 1.4s;
+  }
+  path:nth-of-type(1) {
+    animation-delay: 1.6s;
+  }
+  path:nth-of-type(2) {
+    animation-delay: 2s;
+  }
+  polygon:nth-of-type(4) {
+    animation-delay: 2.1s;
+  }
+  polygon:nth-of-type(5) {
+    animation-delay: 2.2s;
+  }
+}
+
+#love {
+  path:nth-of-type(1) {
+    animation-delay: 2.0s;
+  }
+  path:nth-of-type(2) {
+    animation-delay: 2.4s;
+  }
+  polygon:nth-of-type(4) {
+    animation-delay: 3.2s;
+  }
+  polygon:nth-of-type(5) {
+    animation-delay: 4.0s;
+  }
+}
+
+#crowd > circle, #crowd > ellipse {
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: sparkle;
+  &:nth-of-type(7n) {
+    animation-delay: 0;
+    animation-duration: .7s;
+  }
+  &:nth-of-type(7n-1) {
+    animation-delay: .3s;
+    animation-duration: 1.1s;
+  }
+  &:nth-of-type(7n-2) {
+    animation-delay: .12s;
+    animation-duration: .7s;
+  }
+  &:nth-of-type(7n-3) {
+    animation-delay: .23s;
+    animation-duration: 1.2s;
+  }
+  &:nth-of-type(7n-4) {
+    animation-delay: .32s;
+    animation-duration: .6s;
+  }
+  &:nth-of-type(7n-5) {
+    animation-delay: .89s;
+    animation-duration: 1.0s;
+  }
+  &:nth-of-type(7n-6) {
+    animation-delay: 1.38s;
+    animation-duration: 1.1s;
+  }
 }
