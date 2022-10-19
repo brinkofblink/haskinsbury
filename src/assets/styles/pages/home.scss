@@ -21,6 +21,9 @@
   }
   .linocut {
     display: flex;
+    svg {
+      width: 100%;
+    }
     img {
       -webkit-mask-image: linear-gradient(to top, black 5%, transparent);
       mask-image: linear-gradient(to top, black 5%, transparent);
