@@ -50,7 +50,10 @@
     padding-bottom: clamp(3rem, 6vw, 9rem);
     h1, p {
       margin: 0 auto;
-      width: min(54rem, 85%);
+      width: min(48rem, 85%);
+    }
+    h1 + p {
+      margin-top: 1em;
     }
     @include mobile {
       h1 + p {
@@ -80,10 +83,12 @@ h1, h2, p {
   text-align: center;
   opacity: 0;
   animation: fade-blur 1.2s ease 3s forwards;
-  font-size: clamp(2rem, 3.8vw, 4rem);
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
   margin: 0;
-  color: c(pink);
-  line-height: 1.2;
+  color: #333333;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 @keyframes fade-out {

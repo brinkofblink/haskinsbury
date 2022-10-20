@@ -2,9 +2,9 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  color: #8a8a8a;
   z-index: 10;
   margin-bottom: 2rem;
+  color: #333333;
   > * {
     width: 100%;
   }
@@ -15,7 +15,11 @@ form {
     text-align: left;
   }
   * {
-    color: #8a8a8a;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #333333;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   width: 100%;
@@ -42,7 +46,7 @@ form {
 
 form {
   label, p {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0.2rem;
   }
 }
@@ -68,6 +72,7 @@ form button, input[type="submit"] {
   border: 2px solid darken(c(pink), 2%);
   -webkit-appearance: none;
   color: white;
+  line-height: 2;
 }
 
 select {
