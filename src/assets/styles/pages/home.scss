@@ -18,9 +18,22 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: clamp(3rem, 6vw, 9rem);
+    padding-bottom: clamp(3rem, 6vw, 9rem);
+    padding-left: max(5vw, 2rem);
+    padding-right: max(5vw, 2rem);
+    gap: 2ex;
+    p {
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: clamp(4rem, 9.8vw, 10rem);
+      margin-top: 0;
+    }
   }
   .linocut {
     display: flex;
+    padding: 0;
     svg {
       width: 100%;
     }
@@ -47,6 +60,7 @@
     }
   }
   .invite {
+    padding-top: 0;
     padding-bottom: clamp(3rem, 6vw, 9rem);
     h1, p {
       margin: 0 auto;
@@ -61,13 +75,25 @@
       }
     }
   }
+  .bg-pink {
+    * {
+      color: white;
+    }
+  }
   .stay-tuned {
     padding-bottom: clamp(3rem, 6vw, 9rem);
     padding-top: clamp(3rem, 6vw, 9rem);
   }
-  .save-the-date {
+  .taxis {
     font-size: clamp(2rem, 3.8vw, 4rem);
     padding-top: clamp(3rem, 6vw, 9rem);
+    padding-bottom: clamp(3rem, 6vw, 9rem);
+    color: #333333;
+  }
+  .date-times {
+    padding-top: clamp(3rem, 6vw, 9rem);
+    padding-bottom: clamp(3rem, 6vw, 9rem);
+    color: #333333;
   }
   .stay-tuned {
     padding-top: clamp(3rem, 6vw, 9rem);
@@ -87,8 +113,12 @@ h1, h2, p {
   margin: 0;
   color: #333333;
   line-height: 1.1;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+p {
+  max-width: 74ch;
+  line-height: 1.4;
 }
 
 @keyframes fade-out {
